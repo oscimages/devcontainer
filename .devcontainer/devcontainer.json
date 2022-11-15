@@ -1,6 +1,6 @@
 {
 	"name": "Ubuntu",
-	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"image": "ghcr.io/oscimages/devcontainer:0.1.0",
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:1": {}
 	},
@@ -8,7 +8,7 @@
 		"source=${localEnv:HOME}/.ssh/,target=/home/vscode/.ssh/,type=bind,consistency=cached",
 		"source=${localEnv:HOME}/.aws/,target=/home/vscode/.aws/,type=bind,consistency=cached",
 		"source=${localEnv:HOME}/.docker/,target=/home/vscode/.docker/,type=bind,consistency=cached"
-	]
+	],
 
 
 	// Features to add to the dev container. More info: https://containers.dev/implementors/features.
@@ -24,5 +24,5 @@
 	// "customizations": {},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+	"remoteUser": "vscode"
 }
