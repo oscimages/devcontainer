@@ -3,7 +3,7 @@ name: Action Sample
 on:
   push:
     branches: 
-      - work
+      - nodejs
       - main
   workflow_dispatch:
 
@@ -29,6 +29,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:0.1.0
+          tags: ghcr.io/${{ github.repository }}:latest
