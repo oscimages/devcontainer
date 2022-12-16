@@ -1,5 +1,5 @@
 NAME=$(shell basename $(shell pwd))
-ORG=$(shell basename $(shell dirname $(shell pwd)))
+ORG=$(shell git remote -v | grep fetch | sed -e 's#.*://github.com/##' | cut -d'/' -f 1)
 
 ifdef http_proxy
 BLD_OPTS=--build-arg http_proxy=$$http_proxy --build-arg https_proxy=$$https_proxy --build-arg no_proxy=$$no_proxy
