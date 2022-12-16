@@ -1,4 +1,5 @@
-name: Action Sample
+# uses: docker/setup-qemu-action
+name: docker build
 
 on:
   push:
