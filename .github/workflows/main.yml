@@ -3,8 +3,7 @@ name: docker build
 
 on:
   push:
-    branches: 
-      - nodejs
+    branches:
       - main
   workflow_dispatch:
 

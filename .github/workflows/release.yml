@@ -1,0 +1,29 @@
+on:
+  push:
+    branches: 
+      - nodejs
+    tags:
+      - 't*'
+
+name: Release
+
+jobs:
+
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#environment-files
+      - name: semver
+        id: semver
+        run: |
+          echo "SEMVER=${GITHUB_REF/refs\/tags\/t/}" >> $GITHUB_ENV
+
+      - name: build
+        run: |
+          echo semver=$SEMVER
