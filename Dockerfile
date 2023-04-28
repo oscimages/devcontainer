@@ -31,7 +31,7 @@ ENV USER_UID=$USER_UID
 ENV USER_GID=$USER_GID
 
 # Add sudo support for non-root user
-RUN echo "%sudo ALL=(ALL:ALL) NOPASSWD:ALL"  > /etc/sudoers.d/nopasswd
+RUN echo "%sudo ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/nopasswd
 
 RUN cut -d: -f 3 /etc/group | grep -w $USER_GID || groupadd --gid $USER_GID $USERNAME
 RUN useradd -s /bin/zsh --uid $USER_UID --gid $USER_GID -G sudo -m $USERNAME
