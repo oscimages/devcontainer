@@ -1,0 +1,9 @@
+#!/bin/bash
+
+PLUGINS=$(cat <(asdf plugin-list | grep -v '*') <(awk '{print $1}' .tool-versions) | sort | uniq -c | awk '$1 == 1 {print $2}')
+for plugin in $PLUGINS
+do
+   echo plugin add $plugin
+   asdf plugin-add $plugin
+done
+asdf install

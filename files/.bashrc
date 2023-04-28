@@ -115,3 +115,14 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# asdf
+. $HOME/.asdf/asdf.sh
+
+# Completion
+if [ -f /usr/share/bash-completion/completions/git ]; then
+    . /usr/share/bash-completion/completions/git
+fi
+if [ -f $HOME/.asdf/completions/asdf.bash ]; then
+    . $HOME/.asdf/completions/asdf.bash
+fi

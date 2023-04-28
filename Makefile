@@ -10,5 +10,4 @@ pull:
 	docker pull ghcr.io/$(ORG)/$(NAME):latest
 
 run:
-	docker run $(OPTS) -it --rm $(NAME) bash
- 
+	docker run $(OPTS) -it --rm -u vscode -w /home/vscode $(NAME) bash -l
