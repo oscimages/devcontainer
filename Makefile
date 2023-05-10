@@ -11,3 +11,6 @@ pull:
 
 run:
 	docker run $(OPTS) -it --rm -u vscode -w /home/vscode $(NAME) bash -l
+
+test:
+	trivy image --severity HIGH,CRITICAL $(NAME)
