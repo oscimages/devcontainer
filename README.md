@@ -45,5 +45,5 @@ git tag -a -m "v$SEM_VER=1.0.0" v$SEM_VER
 リリースします。
 
 ```
-git push
+git push --tags
 ```
