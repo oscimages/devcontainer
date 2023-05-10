@@ -3,7 +3,8 @@ name: Docker build latest from default branch
 on:
   push:
     branches: 
-      - $default-branch
+      - main
+      - master
 
 jobs:
   docker_build:
