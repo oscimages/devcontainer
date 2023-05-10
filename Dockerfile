@@ -43,4 +43,3 @@ RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
 WORKDIR /home/${USERNAME}
 RUN bash -c ". /home/${USERNAME}/.asdf/asdf.sh && asdf-install"
 WORKDIR /
-USER root
