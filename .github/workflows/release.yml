@@ -1,4 +1,4 @@
-name: Docker build latest from default branch
+name: Release image
 
 on:
   create:
