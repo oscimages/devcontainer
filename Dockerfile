@@ -35,10 +35,10 @@ RUN echo "%sudo ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/nopasswd
 
 RUN cut -d: -f 3 /etc/group | grep -w $USER_GID || groupadd --gid $USER_GID $USERNAME
 RUN useradd -s /bin/zsh --uid $USER_UID --gid $USER_GID -G sudo -m $USERNAME
+COPY --chown=${USERNAME}:${USERNAME} files/.tool-versions /home/${USERNAME}/.tool-versions
 
 # Install asdf https://asdf-vm.com/guide/getting-started.html#_1-install-dependencies
 USER $USERNAME
-COPY files/.tool-versions /home/${USERNAME}/.tool-versions
 RUN git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
 WORKDIR /home/${USERNAME}
 RUN bash -c ". /home/${USERNAME}/.asdf/asdf.sh && asdf-install"
