@@ -39,7 +39,7 @@ SEM_VER=1.0.0
 タグをつけます。
 
 ```
-git tag -a -m "v$SEM_VER=1.0.0" v$SEM_VER
+git tag -a -m "v$SEM_VER" v$SEM_VER
 ```
 
 リリースします。
